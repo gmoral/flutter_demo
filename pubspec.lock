@@ -23,7 +23,7 @@ packages:
     source: hosted
     version: "2.4.0"
   async_redux:
-    dependency: "direct dev"
+    dependency: "direct main"
     description:
       name: async_redux
       url: "https://pub.dartlang.org"
@@ -51,7 +51,7 @@ packages:
     source: hosted
     version: "1.14.11"
   connectivity:
-    dependency: "direct dev"
+    dependency: "direct main"
     description:
       name: connectivity
       url: "https://pub.dartlang.org"
@@ -99,18 +99,32 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "5.1.0"
+  flushbar:
+    dependency: "direct main"
+    description:
+      name: flushbar
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "1.10.2"
   flutter:
     dependency: "direct main"
     description: flutter
     source: sdk
     version: "0.0.0"
+  flutter_cognito_plugin:
+    dependency: "direct main"
+    description:
+      name: flutter_cognito_plugin
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "2.0.0"
   flutter_test:
     dependency: "direct dev"
     description: flutter
     source: sdk
     version: "0.0.0"
   get_it:
-    dependency: "direct dev"
+    dependency: "direct main"
     description:
       name: get_it
       url: "https://pub.dartlang.org"
@@ -124,14 +138,14 @@ packages:
     source: hosted
     version: "0.12.3"
   graphql:
-    dependency: "direct dev"
+    dependency: "direct main"
     description:
       name: graphql
       url: "https://pub.dartlang.org"
     source: hosted
     version: "3.0.1"
   http:
-    dependency: "direct dev"
+    dependency: "direct main"
     description:
       name: http
       url: "https://pub.dartlang.org"
@@ -242,6 +256,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "1.0.2"
+  plugin_scaffold:
+    dependency: transitive
+    description:
+      name: plugin_scaffold
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "3.1.0"
   quiver:
     dependency: transitive
     description:
