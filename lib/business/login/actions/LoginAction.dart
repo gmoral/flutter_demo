@@ -21,10 +21,6 @@ class LoginAction extends ReduxAction<AppState> {
         await _api.login(username: username, password: password);
 
     if (loginResponse.success) {
-      if (!state.isUnitTesting) {
-        dispatch(NavigateAction.pushNamedAndRemoveAll("/home"));
-      }
-
       return state.copyWith(
           isLogin: true,
           loginState: state.loginState

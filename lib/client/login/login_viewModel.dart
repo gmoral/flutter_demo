@@ -10,11 +10,13 @@ class LoginViewModel extends BaseModel<AppState> {
   bool waiting;
   LoginState loginState;
   Function(String, String) onLogin;
+  VoidCallback homePage;
 
   LoginViewModel.build({
     @required this.onLogin,
     @required this.waiting,
     @required this.loginState,
+    @required this.homePage,
   }) : super(equals: [waiting, loginState]);
 
   @override
@@ -22,6 +24,7 @@ class LoginViewModel extends BaseModel<AppState> {
 
       /// If there is any waiting, 'state.wait.isWaiting' will return true.
       waiting: state.waiting,
+      homePage: () => dispatch(NavigateAction.pushNamedAndRemoveAll("/home")),
       loginState: state.loginState,
       onLogin: (username, password) =>
           dispatch(LoginAction(username: username, password: password)));

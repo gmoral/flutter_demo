@@ -7,10 +7,10 @@ class LoginPage extends StatefulWidget {
   final bool waiting;
   final LoginState loginState;
   final Function(String, String) onLogin;
-  final Function(String) goPageHome;
+  final VoidCallback homePage;
 
   LoginPage(
-      {Key key, this.waiting, this.loginState, this.onLogin, this.goPageHome})
+      {Key key, this.waiting, this.loginState, this.onLogin, this.homePage})
       : super(key: key);
 
   @override
