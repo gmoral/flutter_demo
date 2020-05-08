@@ -29,7 +29,6 @@ dependencies:
   get_it: ^4.0.2
   graphql: ^3.0.1
   flushbar: ^1.10.2
-  flutter_cognito_plugin: ^2.0.0
 
 dev_dependencies:
   flutter_test:

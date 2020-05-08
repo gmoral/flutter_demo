@@ -111,13 +111,6 @@ packages:
     description: flutter
     source: sdk
     version: "0.0.0"
-  flutter_cognito_plugin:
-    dependency: "direct main"
-    description:
-      name: flutter_cognito_plugin
-      url: "https://pub.dartlang.org"
-    source: hosted
-    version: "2.0.0"
   flutter_test:
     dependency: "direct dev"
     description: flutter
@@ -256,13 +249,6 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "1.0.2"
-  plugin_scaffold:
-    dependency: transitive
-    description:
-      name: plugin_scaffold
-      url: "https://pub.dartlang.org"
-    source: hosted
-    version: "3.1.0"
   quiver:
     dependency: transitive
     description:
