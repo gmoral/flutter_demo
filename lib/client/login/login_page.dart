@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:flutterdemo/utilities/constants.dart';
 import 'package:flutterdemo/business/login/models/login_state.dart';
+import 'package:flutterdemo/services/storage/model/user.dart';
 
 class LoginPage extends StatefulWidget {
   final bool waiting;
