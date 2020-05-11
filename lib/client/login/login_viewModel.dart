@@ -3,8 +3,6 @@ import 'package:async_redux/async_redux.dart';
 import 'package:flutterdemo/business/app_state_store.dart';
 import 'package:flutterdemo/business/login/actions/LoginAction.dart';
 import 'package:flutterdemo/business/login/models/login_state.dart';
-import 'package:flutterdemo/services/storage/model/user.dart';
-import 'package:flutterdemo/services/storage/actions/InsertUserAction.dart';
 
 class LoginViewModel extends BaseModel<AppState> {
   LoginViewModel();

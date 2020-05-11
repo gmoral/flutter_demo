@@ -19,7 +19,6 @@ void main() async {
   NavigateAction.setNavigatorKey(navigatorKey);
   setupLocator();
   WidgetsFlutterBinding.ensureInitialized();
-
   final db = await dbProvider.database;
 
   runApp(FlutterDemoApp());
