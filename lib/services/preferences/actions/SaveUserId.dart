@@ -1,7 +1,7 @@
 import 'package:async_redux/async_redux.dart';
 import 'package:flutterdemo/business/app_state_store.dart';
 import 'package:flutterdemo/services/service_locator.dart';
-import 'package:flutterdemo/services/sharedPreferences/shared_service.dart';
+import 'package:flutterdemo/services/preferences/shared_service.dart';
 import 'package:flutterdemo/business/utilities/BarrierAction.dart';
 
 class SaveUserIdAction extends ReduxAction<AppState> {
