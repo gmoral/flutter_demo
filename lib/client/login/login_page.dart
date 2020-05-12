@@ -36,26 +36,30 @@ class _LoginPageState extends State<LoginPage> {
                 'Email',
                 style: kLabelStyle,
               ),
-              Container(
-                alignment: Alignment.centerLeft,
-                decoration: kBoxDecorationStyle,
-                height: 60.0,
-                child: TextField(
-                  onChanged: (value) => _username = value,
-                  keyboardType: TextInputType.emailAddress,
-                  style: TextStyle(
-                    color: Colors.white,
-                    fontFamily: 'OpenSans',
-                  ),
-                  decoration: InputDecoration(
-                    border: InputBorder.none,
-                    contentPadding: EdgeInsets.only(top: 14.0),
-                    prefixIcon: Icon(
-                      Icons.email,
+              Padding(
+                padding: EdgeInsets.only(
+                    left: 20.0, top: 0.0, right: 20.0, bottom: 0.0),
+                child: Container(
+                  alignment: Alignment.centerLeft,
+                  decoration: kBoxDecorationStyle,
+                  height: 60.0,
+                  child: TextField(
+                    onChanged: (value) => _username = value,
+                    keyboardType: TextInputType.emailAddress,
+                    style: TextStyle(
                       color: Colors.white,
+                      fontFamily: 'OpenSans',
                     ),
-                    hintText: 'Enter your Email',
-                    hintStyle: kHintTextStyle,
+                    decoration: InputDecoration(
+                      border: InputBorder.none,
+                      contentPadding: EdgeInsets.only(top: 14.0),
+                      prefixIcon: Icon(
+                        Icons.email,
+                        color: Colors.white,
+                      ),
+                      hintText: 'Enter your Email',
+                      hintStyle: kHintTextStyle,
+                    ),
                   ),
                 ),
               ),
@@ -63,48 +67,56 @@ class _LoginPageState extends State<LoginPage> {
                 'Password',
                 style: kLabelStyle,
               ),
-              Container(
-                alignment: Alignment.centerLeft,
-                decoration: kBoxDecorationStyle,
-                height: 60.0,
-                child: TextField(
-                  onChanged: (value) => _password = value,
-                  obscureText: true,
-                  style: TextStyle(
-                    color: Colors.white,
-                    fontFamily: 'OpenSans',
-                  ),
-                  decoration: InputDecoration(
-                    border: InputBorder.none,
-                    contentPadding: EdgeInsets.only(top: 14.0),
-                    prefixIcon: Icon(
-                      Icons.lock,
+              Padding(
+                padding: const EdgeInsets.only(
+                    left: 20.0, top: 0.0, right: 20.0, bottom: 0.0),
+                child: Container(
+                  alignment: Alignment.centerLeft,
+                  decoration: kBoxDecorationStyle,
+                  height: 60.0,
+                  child: TextField(
+                    onChanged: (value) => _password = value,
+                    obscureText: true,
+                    style: TextStyle(
                       color: Colors.white,
+                      fontFamily: 'OpenSans',
                     ),
-                    hintText: 'Enter your Password',
-                    hintStyle: kHintTextStyle,
+                    decoration: InputDecoration(
+                      border: InputBorder.none,
+                      contentPadding: EdgeInsets.only(top: 14.0),
+                      prefixIcon: Icon(
+                        Icons.lock,
+                        color: Colors.white,
+                      ),
+                      hintText: 'Enter your Password',
+                      hintStyle: kHintTextStyle,
+                    ),
                   ),
                 ),
               ),
-              Container(
-                padding: EdgeInsets.symmetric(vertical: 25.0),
-                width: double.infinity,
-                child: RaisedButton(
-                  elevation: 5.0,
-                  onPressed: () => widget.onLogin(_username, _password),
-                  padding: EdgeInsets.all(15.0),
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(30.0),
-                  ),
-                  color: Colors.white,
-                  child: Text(
-                    'LOGIN',
-                    style: TextStyle(
-                      color: Color(0xFF527DAA),
-                      letterSpacing: 1.5,
-                      fontSize: 18.0,
-                      fontWeight: FontWeight.bold,
-                      fontFamily: 'OpenSans',
+              Padding(
+                padding: const EdgeInsets.only(
+                    left: 20.0, top: 0.0, right: 20.0, bottom: 0.0),
+                child: Container(
+                  padding: EdgeInsets.symmetric(vertical: 25.0),
+                  width: double.infinity,
+                  child: RaisedButton(
+                    elevation: 5.0,
+                    onPressed: () => widget.onLogin(_username, _password),
+                    padding: EdgeInsets.all(15.0),
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(30.0),
+                    ),
+                    color: Colors.white,
+                    child: Text(
+                      'LOGIN',
+                      style: TextStyle(
+                        color: Color(0xFF527DAA),
+                        letterSpacing: 1.5,
+                        fontSize: 18.0,
+                        fontWeight: FontWeight.bold,
+                        fontFamily: 'OpenSans',
+                      ),
                     ),
                   ),
                 ),
