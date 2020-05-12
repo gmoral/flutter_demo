@@ -24,7 +24,8 @@ class LoginViewModel extends BaseModel<AppState> {
 
       /// If there is any waiting, 'state.wait.isWaiting' will return true.
       waiting: state.waiting,
-      homePage: () => dispatch(NavigateAction.pushNamedAndRemoveAll("/home")),
+      homePage: () =>
+          dispatch(NavigateAction.pushNamedAndRemoveAll("/introPin")),
       loginState: state.loginState,
       onLogin: (username, password) =>
           dispatch(LoginAction(username: username, password: password)));

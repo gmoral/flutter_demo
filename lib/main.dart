@@ -5,8 +5,8 @@ import 'package:flutterdemo/business/app_state_store.dart';
 import 'package:flutterdemo/client/login/login_connector.dart';
 import 'package:flutterdemo/client/sign_in/sign_in_connector.dart';
 import 'package:flutterdemo/client/home/home_connector.dart';
+import 'package:flutterdemo/client/auth/pin_intro_connector.dart';
 import 'package:flutterdemo/global_keys.dart';
-
 import 'package:flutterdemo/services/storage/storage_database_helper.dart';
 
 final dbProvider = DatabaseHelper.instance;
@@ -15,6 +15,7 @@ final routes = {
   '/': (BuildContext context) => SignInConnector(),
   '/login': (BuildContext context) => LoginConnector(),
   "/home": (BuildContext context) => HomeConnector(),
+  "/introPin": (BuildContext context) => PinIntroConnector(),
 };
 
 void main() async {
