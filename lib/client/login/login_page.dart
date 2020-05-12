@@ -27,7 +27,7 @@ class _LoginPageState extends State<LoginPage> {
   Widget build(BuildContext context) {
     return Stack(children: [
       Scaffold(
-        appBar: AppBar(title: Text('Sign In')),
+        appBar: AppBar(title: Text('Flutter Demo')),
         body: Center(
             child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
