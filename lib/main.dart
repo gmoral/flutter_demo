@@ -6,6 +6,10 @@ import 'package:flutterdemo/client/login/login_connector.dart';
 import 'package:flutterdemo/client/home/home_connector.dart';
 import 'package:flutterdemo/global_keys.dart';
 
+import 'package:flutterdemo/services/storage/storage_database_helper.dart';
+
+final dbProvider = DatabaseHelper.instance;
+
 final routes = {
   '/': (BuildContext context) => LoginConnector(),
   "/home": (BuildContext context) => HomeConnector(),
@@ -14,10 +18,13 @@ final routes = {
 void main() async {
   NavigateAction.setNavigatorKey(navigatorKey);
   setupLocator();
-  runApp(UnitTestingApp());
+  WidgetsFlutterBinding.ensureInitialized();
+  final db = await dbProvider.database;
+
+  runApp(FlutterDemoApp());
 }
 
-class UnitTestingApp extends StatelessWidget {
+class FlutterDemoApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) => StoreProvider<AppState>(
       store: store,

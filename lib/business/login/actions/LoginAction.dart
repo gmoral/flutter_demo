@@ -3,7 +3,7 @@ import 'package:flutterdemo/business/app_state_store.dart';
 import 'package:flutterdemo/business/login/models/LoginResponse.dart';
 import 'package:flutterdemo/business/login/models/login_state.dart';
 import 'package:flutterdemo/services/service_locator.dart';
-import 'package:flutterdemo/services/api/Api.dart';
+import 'package:flutterdemo/services/api/api.dart';
 import 'package:flutterdemo/business/utilities/BarrierAction.dart';
 
 class LoginAction extends ReduxAction<AppState> {

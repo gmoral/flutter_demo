@@ -12,6 +12,7 @@ class LoginConnector extends StatelessWidget {
   Widget build(BuildContext context) {
     return StoreConnector<AppState, LoginViewModel>(
         model: LoginViewModel(),
+        onInitialBuild: (LoginViewModel vm) {},
         onWillChange: (LoginViewModel vm) {
           if (vm.loginState.pageState == LoginPageState.NextToHomePage) {
             vm.homePage();
