@@ -7,7 +7,8 @@ import 'package:flutterdemo/client/sign_in/sign_in_connector.dart';
 import 'package:flutterdemo/client/home/home_connector.dart';
 import 'package:flutterdemo/client/auth/pin_intro_connector.dart';
 import 'package:flutterdemo/client/auth/pin_entry_connector.dart';
-import 'package:flutterdemo/client/auth/pin_retry_connector.dart';
+import 'package:flutterdemo/client/auth/pin_confirm_connector.dart';
+import 'package:flutterdemo/client/auth/pin_setup_connector.dart';
 import 'package:flutterdemo/global_keys.dart';
 import 'package:flutterdemo/services/storage/storage_database_helper.dart';
 
@@ -19,7 +20,8 @@ final routes = {
   "/home": (BuildContext context) => HomeConnector(),
   "/pin_intro": (BuildContext context) => PinIntroConnector(),
   "/pin_entry": (BuildContext context) => PinEntryConnector(),
-  "/pin_retry": (BuildContext context) => PinRetryConnector(),
+  "/pin_confirm": (BuildContext context) => PinConfirmConnector(),
+  "/pin_setup": (BuildContext context) => PinSetupConnector(),
 };
 
 void main() async {

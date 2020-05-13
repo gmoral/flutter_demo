@@ -2,19 +2,19 @@ import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:flutterdemo/widgets/passcode.dart';
 
-class PinRetryPage extends StatefulWidget {
+class PinConfirmPage extends StatefulWidget {
   final bool waiting;
   final VoidCallback onNext;
   final VoidCallback onPop;
 
-  PinRetryPage({Key key, this.waiting, this.onNext, this.onPop})
+  PinConfirmPage({Key key, this.waiting, this.onNext, this.onPop})
       : super(key: key);
 
   @override
-  _PinRetryPageState createState() => _PinRetryPageState();
+  _PinConfirmPageState createState() => _PinConfirmPageState();
 }
 
-class _PinRetryPageState extends State<PinRetryPage> {
+class _PinConfirmPageState extends State<PinConfirmPage> {
   Widget build(BuildContext context) {
     return MaterialApp(
         home: Scaffold(
