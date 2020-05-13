@@ -158,9 +158,7 @@ class _PinIntroPageState extends State<PinIntroPage> {
                           child: SizedBox(
                             width: double.maxFinite, // set width to maxFinite
                             child: RaisedButton(
-                              onPressed: () {
-                                print('open create pin page');
-                              },
+                              onPressed: widget.createPinPage,
                               child: const Text('Create Passcode',
                                   style: TextStyle(fontSize: 20)),
                               color: Colors.deepPurple,
