@@ -2,19 +2,19 @@ import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:flutterdemo/widgets/passcode.dart';
 
-class PinEntryPage extends StatefulWidget {
+class PinRetryPage extends StatefulWidget {
   final bool waiting;
-  final VoidCallback onPinRetry;
+  final VoidCallback onNext;
   final VoidCallback onPop;
 
-  PinEntryPage({Key key, this.waiting, this.onPinRetry, this.onPop})
+  PinRetryPage({Key key, this.waiting, this.onNext, this.onPop})
       : super(key: key);
 
   @override
-  _PinEntryPageState createState() => _PinEntryPageState();
+  _PinRetryPageState createState() => _PinRetryPageState();
 }
 
-class _PinEntryPageState extends State<PinEntryPage> {
+class _PinRetryPageState extends State<PinRetryPage> {
   Widget build(BuildContext context) {
     return MaterialApp(
         home: Scaffold(
@@ -50,7 +50,8 @@ class _PinEntryPageState extends State<PinEntryPage> {
                         child: Padding(
                           padding: const EdgeInsets.only(
                               left: 20.0, top: 60.0, right: 20.0, bottom: 0.0),
-                          child: const Text('Create your passcode',
+                          child: const Text(
+                              'Great! Now, enter your passcode again to confirm',
                               style: TextStyle(
                                   fontFamily: 'Pacifico',
                                   fontSize: 20.0,
@@ -66,7 +67,7 @@ class _PinEntryPageState extends State<PinEntryPage> {
                           child: PasscodeTextField(
                             onTextChanged: (passcode) {
                               if (passcode.length == 6) {
-                                widget.onPinRetry();
+                                widget.onNext();
                               }
                             },
                             totalCharacters: 6,
@@ -81,7 +82,7 @@ class _PinEntryPageState extends State<PinEntryPage> {
                         child: Padding(
                           padding: const EdgeInsets.only(
                               left: 20.0, top: 20.0, right: 20.0, bottom: 0.0),
-                          child: const Text('Enter a six-digit passcode',
+                          child: const Text('Enter the same passcode',
                               style: TextStyle(
                                   fontFamily: 'Pacifico',
                                   fontSize: 20.0,

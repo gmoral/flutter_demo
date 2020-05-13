@@ -12,7 +12,7 @@ class PinEntryConnector extends StatelessWidget {
     return StoreConnector<AppState, PinEntryViewModel>(
       model: PinEntryViewModel(),
       builder: (BuildContext context, PinEntryViewModel vm) => PinEntryPage(
-        onPinEntry: vm.onPinEntry,
+        onPinRetry: vm.onPinRetry,
         onPop: vm.onPop,
       ),
     );

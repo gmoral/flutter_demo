@@ -6,16 +6,15 @@ class PinEntryViewModel extends BaseModel<AppState> {
   PinEntryViewModel();
 
   bool waiting;
-  VoidCallback onPinEntry;
+  VoidCallback onPinRetry;
   VoidCallback onPop;
 
   PinEntryViewModel.build(
-      {@required this.waiting, @required this.onPinEntry, this.onPop});
+      {@required this.waiting, @required this.onPinRetry, this.onPop});
 
   @override
   PinEntryViewModel fromStore() => PinEntryViewModel.build(
       onPop: () => dispatch(NavigateAction.pop()),
       waiting: state.waiting,
-      onPinEntry: () =>
-          dispatch(NavigateAction.pushNamedAndRemoveAll("/retryPinPage")));
+      onPinRetry: () => dispatch(NavigateAction.pushNamed("/pin_retry")));
 }
