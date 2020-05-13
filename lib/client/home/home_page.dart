@@ -7,17 +7,18 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-        appBar: AppBar(title: Text('Home')),
-        body: Align(
-          alignment: Alignment.bottomCenter,
-          child: RaisedButton(
-            onPressed: onLogout,
-            child: const Text('Logout', style: TextStyle(fontSize: 20)),
-            color: Colors.blue,
-            textColor: Colors.white,
-            elevation: 5,
-          ),
-        ));
+    return MaterialApp(
+        home: Scaffold(
+            appBar: AppBar(title: Text('Home')),
+            body: Align(
+              alignment: Alignment.bottomCenter,
+              child: RaisedButton(
+                onPressed: onLogout,
+                child: const Text('Logout', style: TextStyle(fontSize: 20)),
+                color: Colors.blue,
+                textColor: Colors.white,
+                elevation: 5,
+              ),
+            )));
   }
 }

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
+import 'package:flutterdemo/widgets/customDialog.dart';
 
 class SignInPage extends StatefulWidget {
   final bool waiting;
@@ -104,7 +105,15 @@ class _SignInPageState extends State<SignInPage> {
                               left: 0.0, top: 8.0, right: 0.0, bottom: 20.0),
                           child: GestureDetector(
                             onTap: () {
-                              print("What is FD was tapped!");
+                              showDialog(
+                                context: context,
+                                builder: (BuildContext context) => CustomDialog(
+                                  title: "What is FD?",
+                                  description:
+                                      "Flutter Demo will help you to use good examples of unit and widget tests.",
+                                  buttonText: "Okay",
+                                ),
+                              );
                             },
                             child: const Text('What is FD',
                                 style: TextStyle(
