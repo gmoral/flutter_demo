@@ -4,10 +4,10 @@ import 'package:flutterdemo/widgets/passcode.dart';
 
 class PinEntryPage extends StatefulWidget {
   final bool waiting;
-  final VoidCallback onPinRetry;
+  final VoidCallback onNext;
   final VoidCallback onPop;
 
-  PinEntryPage({Key key, this.waiting, this.onPinRetry, this.onPop})
+  PinEntryPage({Key key, this.waiting, this.onNext, this.onPop})
       : super(key: key);
 
   @override
@@ -66,7 +66,7 @@ class _PinEntryPageState extends State<PinEntryPage> {
                           child: PasscodeTextField(
                             onTextChanged: (passcode) {
                               if (passcode.length == 6) {
-                                widget.onPinRetry();
+                                widget.onNext();
                               }
                             },
                             totalCharacters: 6,
