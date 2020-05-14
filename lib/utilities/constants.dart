@@ -1,5 +1,14 @@
 import 'package:flutter/material.dart';
 
+const kRed = Colors.red;
+const kWhite = Colors.white;
+const kBlack = Colors.black;
+
+const kDeepPurple = Colors.deepPurple;
+const kTeal = Colors.teal;
+
+final kLogo = 'images/logo.png';
+
 final kHintTextStyle = TextStyle(
   color: Colors.white54,
   fontFamily: 'OpenSans',
