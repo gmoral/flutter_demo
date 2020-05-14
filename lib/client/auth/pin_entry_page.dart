@@ -1,14 +1,23 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:flutterdemo/widgets/passcode.dart';
+import 'package:flutterdemo/business/auth/models/auth_state.dart';
 
 class PinEntryPage extends StatefulWidget {
   final bool waiting;
   final VoidCallback onNext;
+  final Function(String) onCheckPinEntry;
   final VoidCallback onPop;
+  final AuthState authState;
 
-  PinEntryPage({Key key, this.waiting, this.onNext, this.onPop})
-      : super(key: key);
+  PinEntryPage({
+    Key key,
+    this.waiting,
+    this.onNext,
+    this.onCheckPinEntry,
+    this.onPop,
+    this.authState,
+  }) : super(key: key);
 
   @override
   _PinEntryPageState createState() => _PinEntryPageState();
@@ -65,8 +74,10 @@ class _PinEntryPageState extends State<PinEntryPage> {
                               left: 10.0, top: 20.0, right: 10.0, bottom: 0.0),
                           child: PasscodeTextField(
                             onTextChanged: (passcode) {
+                              print('passcoe : $passcode');
                               if (passcode.length == 6) {
-                                widget.onNext();
+                                print('call Function');
+                                widget.onCheckPinEntry(passcode);
                               }
                             },
                             totalCharacters: 6,

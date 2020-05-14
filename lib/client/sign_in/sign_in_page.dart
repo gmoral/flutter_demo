@@ -1,12 +1,23 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:flutterdemo/widgets/custom_dialog.dart';
+import 'package:flutterdemo/business/auth/models/auth_state.dart';
 
 class SignInPage extends StatefulWidget {
   final bool waiting;
   final VoidCallback loginPage;
+  final VoidCallback checkAuthState;
+  final VoidCallback signInWithPin;
+  final AuthState authState;
 
-  SignInPage({Key key, this.waiting, this.loginPage}) : super(key: key);
+  SignInPage(
+      {Key key,
+      this.waiting,
+      this.loginPage,
+      this.checkAuthState,
+      this.signInWithPin,
+      this.authState})
+      : super(key: key);
 
   @override
   _SignInPageState createState() => _SignInPageState();

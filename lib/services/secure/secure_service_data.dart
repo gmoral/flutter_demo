@@ -10,6 +10,25 @@ class SecureServiceData implements SecureService {
     return null;
   }
 
+  Future<String> getPin(String key) async {
+    String ret = '';
+
+    final all = await _storage.readAll();
+
+    List<SecItem> items = [];
+
+    items =
+        all.keys.map((key) => SecItem(key, all[key])).toList(growable: false);
+
+    items.forEach((element) {
+      if (element.key == 'JackPin') {
+        ret = element.value;
+      }
+    });
+
+    return ret;
+  }
+
   void deleteAll() async {
     await _storage.deleteAll();
   }

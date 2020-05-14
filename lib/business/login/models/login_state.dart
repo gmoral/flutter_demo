@@ -12,11 +12,11 @@ enum LoginPageState {
 
 @immutable
 class LoginState {
+  final LoginPageState pageState;
+
   LoginState({
     @required this.pageState,
   });
-
-  final LoginPageState pageState;
 
   factory LoginState.initial() {
     return LoginState(
