@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
-import 'package:flutterdemo/widgets/customDialog.dart';
+import 'package:flutterdemo/widgets/custom_dialog.dart';
 
 class SignInPage extends StatefulWidget {
   final bool waiting;

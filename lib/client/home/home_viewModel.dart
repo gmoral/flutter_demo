@@ -5,7 +5,6 @@ import 'package:flutterdemo/business/home/actions/LogoutAction.dart';
 
 class HomeViewModel extends BaseModel<AppState> {
   HomeViewModel();
-
   VoidCallback onLogout;
 
   HomeViewModel.build({@required this.onLogout});
