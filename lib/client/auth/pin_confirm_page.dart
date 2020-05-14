@@ -1,13 +1,24 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:flutterdemo/widgets/passcode.dart';
+import 'package:flutterdemo/business/auth/models/auth_state.dart';
 
 class PinConfirmPage extends StatefulWidget {
   final bool waiting;
   final VoidCallback onNext;
   final VoidCallback onPop;
+  final AuthState authState;
+  final Function(String) onCheckPinConfirm;
+  final Function(String) createPin;
 
-  PinConfirmPage({Key key, this.waiting, this.onNext, this.onPop})
+  PinConfirmPage(
+      {Key key,
+      this.waiting,
+      this.onNext,
+      this.onPop,
+      this.authState,
+      this.onCheckPinConfirm,
+      this.createPin})
       : super(key: key);
 
   @override
@@ -67,7 +78,7 @@ class _PinConfirmPageState extends State<PinConfirmPage> {
                           child: PasscodeTextField(
                             onTextChanged: (passcode) {
                               if (passcode.length == 6) {
-                                widget.onNext();
+                                widget.onCheckPinConfirm(passcode);
                               }
                             },
                             totalCharacters: 6,
