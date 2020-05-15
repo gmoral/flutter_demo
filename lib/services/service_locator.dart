@@ -12,7 +12,7 @@ import 'package:get_it/get_it.dart';
 GetIt locator = GetIt.instance;
 
 const bool USE_FAKE_IMPLEMENTATION = true;
-const bool USE_FAKE_DB = true;
+const bool USE_FAKE_DB = false;
 
 void setupLocator() {
   locator.registerLazySingleton<Api>(

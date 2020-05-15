@@ -16,12 +16,6 @@ class InsertUserAction extends ReduxAction<AppState> {
 
     int ret = await _service.insertUser(user);
 
-    if (ret == 1) {
-      print('InsertAction ok');
-    } else {
-      print('InsertAction fail');
-    }
-
     return state;
   }
 

@@ -14,8 +14,6 @@ class CreatePinAction extends ReduxAction<AppState> {
   Future<AppState> reduce() async {
     SecureService _secure = locator<SecureService>();
 
-    print('Action');
-
     SecItem item = SecItem('JackPin', pin);
 
     await _secure.addNewItem(item);
@@ -23,13 +21,10 @@ class CreatePinAction extends ReduxAction<AppState> {
     String checkPin = await _secure.getPin('JackPin');
 
     if (checkPin == pin) {
-      print('Action ok');
       return state.copyWith(
           authState:
               state.authState.copyWith(pageState: AuthPageState.CreatePinOK));
     }
-
-    print('Action Fail');
 
     return state.copyWith(
         authState:

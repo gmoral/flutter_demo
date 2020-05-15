@@ -16,22 +16,16 @@ class PinConfirmConnector extends StatelessWidget {
       onWillChange: (PinConfirmViewModel vm) {
         if (vm.authState.pageState == AuthPageState.PinConfirmOK) {
           String pin = vm.authState.auth.pinEntry;
-          print('Create pin aca : $pin');
           vm.createPin(pin);
         }
 
-        if (vm.authState.pageState == AuthPageState.PinConfirmFail) {
-          print('PinConfirmFail');
-        }
+        if (vm.authState.pageState == AuthPageState.PinConfirmFail) {}
 
         if (vm.authState.pageState == AuthPageState.CreatePinOK) {
-          print('next');
           vm.onNext();
         }
 
-        if (vm.authState.pageState == AuthPageState.CreatePinFail) {
-          print('CreatePinFail');
-        }
+        if (vm.authState.pageState == AuthPageState.CreatePinFail) {}
       },
       builder: (BuildContext context, PinConfirmViewModel vm) => PinConfirmPage(
         onNext: vm.onNext,

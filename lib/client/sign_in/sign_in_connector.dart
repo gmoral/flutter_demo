@@ -13,11 +13,9 @@ class SignInConnector extends StatelessWidget {
     return StoreConnector<AppState, SignInViewModel>(
         model: SignInViewModel(),
         onInitialBuild: (SignInViewModel vm) {
-          print('checkAuthState');
           vm.checkAuthState();
         },
         onWillChange: (SignInViewModel vm) {
-          print('conWillChange');
           if (vm.authState.pageState == AuthPageState.SignIn) {
             vm.signInWithPin();
           }
