@@ -1,0 +1,22 @@
+# this is an auto generated file. This will be overwritten
+query GetTask($id: ID!) {
+  getTask(id: $id) {
+    id
+    owner
+    title
+    description
+    taskStatus
+  }
+}
+query AllTasks($nextToken: String) {
+  allTasks(nextToken: $nextToken) {
+    items {
+      id
+      owner
+      title
+      description
+      taskStatus
+    }
+    nextToken
+  }
+}

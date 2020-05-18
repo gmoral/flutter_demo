@@ -1,15 +1,15 @@
 import 'package:flutterdemo/services/api/api.dart';
 import 'package:flutterdemo/business/login/models/LoginResponse.dart';
+import 'package:flutter_cognito_plugin/flutter_cognito_plugin.dart';
 
 class GraphQLAPI implements Api {
   @override
   Future<LoginResponse> login({String username, String password}) async {
-    await Future.delayed(Duration(seconds: 4));
+    SignInResult signInResult = await Cognito.signIn(username, password);
 
-    if (username == "test1@test.com") {
-      return LoginResponse(userId: 1);
-    }
-
-    return LoginResponse(success: false, message: 'Username not found');
+    return LoginResponse(
+        userId: 1,
+        signInState: signInResult.signInState,
+        message: signInResult.toString());
   }
 }

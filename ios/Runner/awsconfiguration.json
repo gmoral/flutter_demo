@@ -1,0 +1,20 @@
+{
+    "IdentityManager": {
+        "Default": {}
+    },
+    "CredentialsProvider": {
+        "CognitoIdentity": {
+            "Default": {
+                "PoolId": "xxxx",
+                "Region": "xxxx"
+            }
+        }
+    },
+    "CognitoUserPool": {
+        "Default": {
+            "PoolId": "xxxx",
+            "AppClientId": "xxxx",
+            "Region": "xxxx"
+        }
+    }
+}

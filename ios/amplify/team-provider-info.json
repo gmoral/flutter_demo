@@ -1,0 +1,15 @@
+{
+    "dev": {
+        "awscloudformation": {
+            "AuthRoleName": "xxxxx",
+            "UnauthRoleArn": "xxxxx",
+            "AuthRoleArn": "xxxxx",
+            "Region": "xxxxx",
+            "DeploymentBucketName": "xxxxx",
+            "UnauthRoleName": "xxxxx",
+            "StackName": "xxxxx",
+            "StackId": "xxxxx",
+            "AmplifyAppId": "xxxxx"
+        }
+    }
+}

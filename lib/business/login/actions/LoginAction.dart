@@ -1,4 +1,5 @@
 import 'package:async_redux/async_redux.dart';
+import 'package:flutter_cognito_plugin/flutter_cognito_plugin.dart';
 import 'package:flutterdemo/business/app_state_store.dart';
 import 'package:flutterdemo/business/login/models/LoginResponse.dart';
 import 'package:flutterdemo/business/login/models/login_state.dart';
@@ -20,7 +21,7 @@ class LoginAction extends ReduxAction<AppState> {
     LoginResponse loginResponse =
         await _api.login(username: username, password: password);
 
-    if (loginResponse.success) {
+    if (loginResponse.signInState == SignInState.DONE) {
       return state.copyWith(
           isLogin: true,
           loginState: state.loginState
