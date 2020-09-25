@@ -10,6 +10,10 @@ class SignInPage extends StatefulWidget {
   final VoidCallback signInWithPin;
   final AuthState authState;
 
+  static const signInButtonKey = Key('signInButtonKey');
+  static const signInDetailKey = Key('signInDetailKey');
+  static const signInTextKey = Key('signInTextKey');
+
   SignInPage(
       {Key key,
       this.waiting,
@@ -61,6 +65,7 @@ class _SignInPageState extends State<SignInPage> {
                                 left: 20.0, top: 0.0, right: 40.0, bottom: 0.0),
                             child: Text(
                               'Sign in',
+                              key: SignInPage.signInTextKey,
                               textAlign: TextAlign.center,
                               overflow: TextOverflow.ellipsis,
                               style: TextStyle(
@@ -78,6 +83,7 @@ class _SignInPageState extends State<SignInPage> {
                                 left: 20.0, top: 8.0, right: 35.0, bottom: 4.0),
                             child: Text(
                               'Use your email single sign-on FD credentials to accces your account',
+                              key: SignInPage.signInDetailKey,
                               textAlign: TextAlign.left,
                               overflow: TextOverflow.ellipsis,
                               maxLines: 2,
@@ -96,6 +102,7 @@ class _SignInPageState extends State<SignInPage> {
                           child: SizedBox(
                             width: double.maxFinite, // set width to maxFinite
                             child: RaisedButton(
+                              key: SignInPage.signInButtonKey,
                               onPressed: widget.loginPage,
                               child: const Text('Sign In',
                                   style: TextStyle(fontSize: 20)),

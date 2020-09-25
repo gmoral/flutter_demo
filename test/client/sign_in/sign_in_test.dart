@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
-import '../../flutter_demo/lib/client/sign_in/sign_in_page.dart';
+import '../../../../flutter_demo/lib/client/sign_in/sign_in_page.dart';
 
 void main() {
   TestWidgetsFlutterBinding.ensureInitialized();

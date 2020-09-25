@@ -15,8 +15,8 @@ const bool USE_FAKE_IMPLEMENTATION = true;
 const bool USE_FAKE_DB = true;
 
 void setupLocator() {
-  locator.registerLazySingleton<Api>(
-      () => USE_FAKE_IMPLEMENTATION ? FakeApi() : GraphQLAPI());
+  locator.registerLazySingleton<AuthService>(
+      () => USE_FAKE_IMPLEMENTATION ? FakeAuthService() : CognitoAuthService());
   locator.registerLazySingleton<StorageService>(() => StorageServiceDatabase());
   locator.registerLazySingleton<SharedService>(() => SharedServicePreference());
   locator.registerLazySingleton<SecureService>(() => SecureServiceData());

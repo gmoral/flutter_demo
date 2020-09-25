@@ -7,18 +7,24 @@ import 'package:flutterdemo/services/api/api.dart';
 import 'package:flutterdemo/business/utilities/BarrierAction.dart';
 
 class LoginAction extends ReduxAction<AppState> {
+
+  LoginAction({
+    this.username,
+    this.password,
+    AuthService authService,
+  }):   assert(username != null),
+        assert( password != null),
+        auth = authService ?? locator<AuthService>();
+
   final String username;
   final String password;
-
-  LoginAction({this.username, this.password})
-      : assert(username != null, password != null);
+  final AuthService auth;
 
   @override
   Future<AppState> reduce() async {
-    Api _api = locator<Api>();
 
     LoginResponse loginResponse =
-        await _api.login(username: username, password: password);
+    await auth.login(username: username, password: password);
 
     if (loginResponse.success) {
       return state.copyWith(

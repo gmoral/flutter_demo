@@ -3,28 +3,39 @@ import 'package:flutter_test/flutter_test.dart';
 
 import 'package:flutterdemo/business/app_state_store.dart';
 import 'package:flutterdemo/business/login/actions/LoginAction.dart';
-import 'package:flutterdemo/services/service_locator.dart';
 import 'package:flutterdemo/business/login/models/login_state.dart';
+import 'package:flutterdemo/services/api/fake_api.dart';
+import 'package:flutterdemo/business/auth/models/auth_state.dart';
+import 'package:flutterdemo/business/auth/models/auth.dart';
+import 'package:mockito/mockito.dart';
+import 'package:flutterdemo/business/login/models/LoginResponse.dart';
+
+class AuthServiceMock extends Mock implements FakeAuthService {}
 
 void main() {
   test('Login', () async {
-    states = [];
 
-    var storeTester = StoreTester<AppState>(initialState: AppState.initial());
+    // Given
+    final authService = AuthServiceMock();
+    final authStateMock = AuthState(pageState: AuthPageState.Start, auth: Auth(pinEntry: '', pinConfirm: ''));
+    final loginStateMock = LoginState(pageState: LoginPageState.Initial);
 
-    /// Set isUnitTesting: true when run unit testing.
-    storeTester.state.copyWith(isUnitTesting: true);
+    final appStateMock = AppState(waiting: false, isLogin: false, isUnitTesting: true, loginState: loginStateMock, authState: authStateMock);
 
-    setupLocator();
+    var storeTester = StoreTester<AppState>(initialState: appStateMock);
 
-    expect(storeTester.state.isLogin, false);
+    LoginResponse loginResponse = LoginResponse(success: true, userId: 1, message: '' );
 
+    when(authService.login(username: 'test1@test.com', password: 'test1'))
+        .thenAnswer((_) async => loginResponse);
+
+    // When
     storeTester
-        .dispatch(LoginAction(username: 'test1@test.com', password: 'test1'));
-
+        .dispatch(LoginAction(username: 'test1@test.com', password: 'test1', authService: authService));
     TestInfo<AppState> info = await storeTester.waitUntil(LoginAction);
 
-    expect(info.state.waiting, false);
+    // Then
+    expect(info.state.isLogin, true);
     expect(info.state.loginState.pageState, LoginPageState.NextToHomePage);
   });
 }

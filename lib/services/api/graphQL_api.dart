@@ -1,7 +1,7 @@
 import 'package:flutterdemo/services/api/api.dart';
 import 'package:flutterdemo/business/login/models/LoginResponse.dart';
 
-class GraphQLAPI implements Api {
+class CognitoAuthService implements AuthService {
   @override
   Future<LoginResponse> login({String username, String password}) async {
     await Future.delayed(Duration(seconds: 4));
