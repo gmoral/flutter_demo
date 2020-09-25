@@ -1,4 +1,4 @@
-import 'package:flutterdemo/services/api/api.dart';
+import 'package:flutterdemo/services/authService/authService.dart';
 import 'package:flutterdemo/business/login/models/LoginResponse.dart';
 
 class CognitoAuthService implements AuthService {

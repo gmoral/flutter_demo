@@ -1,6 +1,6 @@
-import 'package:flutterdemo/services/api/api.dart';
-import 'package:flutterdemo/services/api/fake_api.dart';
-import 'package:flutterdemo/services/api/graphQL_api.dart';
+import 'package:flutterdemo/services/authService/authService.dart';
+import 'package:flutterdemo/services/authService/fakeAuthService.dart';
+import 'package:flutterdemo/services/authService/cognitoAuthService.dart';
 import 'package:flutterdemo/services/storage/storage_service.dart';
 import 'package:flutterdemo/services/storage/storage_service_database.dart';
 import 'package:flutterdemo/services/preferences/shared_service.dart';

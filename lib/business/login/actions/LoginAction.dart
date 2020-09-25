@@ -3,17 +3,16 @@ import 'package:flutterdemo/business/app_state_store.dart';
 import 'package:flutterdemo/business/login/models/LoginResponse.dart';
 import 'package:flutterdemo/business/login/models/login_state.dart';
 import 'package:flutterdemo/services/service_locator.dart';
-import 'package:flutterdemo/services/api/api.dart';
+import 'package:flutterdemo/services/authService/authService.dart';
 import 'package:flutterdemo/business/utilities/BarrierAction.dart';
 
 class LoginAction extends ReduxAction<AppState> {
-
   LoginAction({
     this.username,
     this.password,
     AuthService authService,
-  }):   assert(username != null),
-        assert( password != null),
+  })  : assert(username != null),
+        assert(password != null),
         auth = authService ?? locator<AuthService>();
 
   final String username;
@@ -22,9 +21,8 @@ class LoginAction extends ReduxAction<AppState> {
 
   @override
   Future<AppState> reduce() async {
-
     LoginResponse loginResponse =
-    await auth.login(username: username, password: password);
+        await auth.login(username: username, password: password);
 
     if (loginResponse.success) {
       return state.copyWith(
